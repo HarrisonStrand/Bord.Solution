@@ -6,15 +6,9 @@ namespace BordAPI.Models
   {
     public int ReviewID { get; set; }
     public string Title { get; set; }
-    public string Experience { get; set; }
-    public int LearningCurve { get; set; }
-    public string Suggestion { get; set; }
-    //private List<Game> _similarGames;
-    public List<Game> SimilarGames {get; set; }///?
-    // {
-    //   get { return } // function to pull games of like genre
-    //   set { _similarGames = value;}
-    // }
+    public string Experience { get; set; } //review text
+    public int LearningCurve { get; set; } //Numerical rating 1-10
+    public string Suggestion { get; set; } //Tips/Suggestions that may help newer players better enjoy the game ex. how to turn into a drinking game, change rule to speed up play...  
     public int GameId { get; set; }
     public virtual Game Game { get; set; }
     public int UserId { get; set; }

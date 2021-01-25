@@ -16,7 +16,6 @@ namespace BordAPI.Models
     public int MaxPlayers { get; set; }
     public string Creators { get; set; }
     public int MinAge { get; set; }
-    public int GenreId { get; set; }
     public int PlayTimeMin { get; set; }
     public virtual ICollection<GameGenre> Genres{get;}
     public virtual ICollection<Review> Reviews {get;set;}
