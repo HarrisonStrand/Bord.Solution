@@ -6,11 +6,12 @@
 @foreach (Review review in Model)
 {
   <ul>
-    @* <li>ID: @report.ReportId</li> *@
-    @* <li>Date: @review.Date</li>
-    <li>Condition: @review.Condition</li>
-    <li>Location: @review.Location</li>
-    <li>Username: @review.Username</li> *@
+    <li>ID: @review.ReviewId</li>
+    <li>Date: @review.Title</li>
+    <li>Condition: @review.Experience</li>
+    <li>Location: @review.LearningCurve</li>
+    <li>Username: @review.Suggestions</li>
+    <li>Username: @review.SimilarGames</li>
   </ul>
   <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
   <br>
