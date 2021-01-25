@@ -1,9 +1,9 @@
-# <p style="color:#0ec2b8" align="center">_Parks Lookup API app_</p>
+# <p style="color:#0ec2b8" align="center">_BORD_</p>
 
 <p align="center">
     <!-- Project Avatar -->
     <br>
-    <a href="https://github.com/NataliyaZhuravleva">
+    <!-- <a href="https://github.com/NataliyaZhuravleva">
         <img src="https://avatars.githubusercontent.com/u/26223609?s=400&u=eba3685b0fa16a0c66c8dec64c2cd7886929b509&v=4">
     </a>
     <!-- GitHub Link -->
@@ -24,7 +24,7 @@
   <small>Initiated January 22th, 2021</small>
 </p>
 
-## <span style="color:#0ec2b8">Table of Contents</span>
+<!-- ## <span style="color:#0ec2b8">Table of Contents</span>
 * <a href="#about">About the project</a>
   * <a href="#description">Description</a>
   * <a href="#used">Technologies Used</a>
@@ -291,4 +291,4 @@ _If you have any questions, ideas or concerns, please, contact me at [natalindri
 
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
-Copyright (c) 2020 **_Nataliya Zhuravleva_**
+Copyright (c) 2020 **_Nataliya Zhuravleva_**  -->
