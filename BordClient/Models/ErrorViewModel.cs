@@ -1,6 +1,6 @@
 using System;
 
-namespace MtSafeClient.Models
+namespace BordClient.Models
 {
     public class ErrorViewModel
     {

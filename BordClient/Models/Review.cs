@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System;
+
 
 namespace BordClient.Models
 {
@@ -26,7 +28,7 @@ namespace BordClient.Models
       return reviewList;
     }
 
-    public static ReviewDetails(int id)
+    public static Review GetDetails(int id)
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;

@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MtSafeClient.Models;
+using BordClient.Models;
 
-namespace MtSafeClient.Controllers
+namespace BordClient.Controllers
 {
     public class HomeController : Controller
     {

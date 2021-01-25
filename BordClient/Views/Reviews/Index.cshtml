@@ -1,3 +1,4 @@
+@using BordClient.Models;
 
 <h1>All Reviews:</h1>
 
@@ -6,12 +7,12 @@
 {
   <ul>
     @* <li>ID: @report.ReportId</li> *@
-    <li>Date: @review.Date</li>
+    @* <li>Date: @review.Date</li>
     <li>Condition: @review.Condition</li>
     <li>Location: @review.Location</li>
-    <li>Username: @review.Username</li>
+    <li>Username: @review.Username</li> *@
   </ul>
-  <a href="/Reports/Details/@(report.ReportId)"><p>View Details</p></a>
+  <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
   <br>
 }
 </ol>
