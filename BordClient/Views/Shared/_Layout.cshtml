@@ -18,15 +18,15 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header class="TopNavBar">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bord</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="BordText">Bord</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"  id="HeaderText">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -48,7 +48,14 @@
             @RenderBody()
         </main>
     </div>
-
+        <div class="card" id="searchcard" style="width: 200px; background-color: #999; z-index: 10; position: fixed; left: 20px; top: 50px; height: auto;">
+            <div class="cardheader">
+                <h3> Header </h3>
+            <div class="cardbody">
+                <p> sort by stuff </p>
+            </div>
+        </div>
+    </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Bord - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

@@ -5,7 +5,6 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  border-color: #CCA429;
 }
 
 /* Sticky footer styles
@@ -16,14 +15,38 @@ html {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
-  }
+  }  
+}
+
+.TopNavBar {
+  /* background-image: url(https://image.freepik.com/free-vector/gold-metal-texture-background_46250-1819.jpg);
+  background-repeat: none;
+  background-position: center;
+  background-size: cover; */
+  background-color: #DDBB55;
+  border-radius: 15px 150px 15px 150px;
+  width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
+#BordText {
+  font-size: larger;
+  font-style: unset;
+}
+
+#HeaderText {
+  margin-left: 30%
 }
 
 .border-top {
-  border-top: 1px solid #CCA429;
+  border-top: 2px solid  rgb(0, 0, 0, 0.7);
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  margin-top: 10px;
+  border-bottom: 5px solid  rgb(0, 0, 0, 0.7);
+  border-radius: 15px 150px 15px 150px;
+  width: 750px;
 }
 
 .box-shadow {
@@ -33,6 +56,21 @@ html {
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+}
+
+/* Sort by Category Card styles
+-------------------------------------------------- */
+
+.card #searchcard {
+  width: 200px; 
+  background-color: #999;
+  z-index: 10;
+  position: fixed; 
+  left: 20px;
+  top: 50px;
+  height: auto;
+  padding: 5px;
+  margin-left: 10px;
 }
 
 /* Sticky footer styles
@@ -45,14 +83,20 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #50514f;
 }
 .footer {
   position: absolute;
+  background-color: #DDBB55;
+  border-radius: 100px 100px 0px 0px;
+  color: #000000;
   bottom: 0;
-  width: 100%;
+  width: 75%;
+  margin: auto;
   white-space: nowrap;
+  text-align: center;
+  margin-left: 12.5%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  color: #CCA429;
+  height: 35px;
+  line-height: 35px; /* Vertically center the text there */
 }

@@ -9,11 +9,11 @@ namespace BordClient.Models
   public class Game
   {
     public int GameId {get; set; }
-    public int GameName {get; set; }
-    public int GamePrice {get; set; }
+    public string GameName {get; set; }
+    public float GamePrice {get; set; }
     public int MinPlayers {get; set; }
     public int MaxPlayers {get; set; }
-    public int Creators {get; set; }
+    public string Creators {get; set; }
     public int MinAge {get; set; }
     public int GenreId {get; set; }
     public int PlayTimeMin {get; set; }
