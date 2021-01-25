@@ -64,8 +64,8 @@ namespace BordAPI.Models
       builder.Entity<Review>()
         .HasData(
           new Review {ReviewId =1, Title="9 Times the Fun", Experience="WooHoo", LearningCurve= 3, Suggestion = "More people the better.", GameId= 1},
-          new Review {ReviewId =1, Title="Oldie but goodie", Experience="Shouldn't have watched queens gambit", LearningCurve= 8, Suggestion = "Study the greats", GameId= 11},
-          new Review {ReviewId =1, Title="Try to fly", Experience="This game was great", LearningCurve= 4, Suggestion = "Plan ahead but don't get caught without a card.", GameId= 4}
+          new Review {ReviewId =2, Title="Oldie but goodie", Experience="Shouldn't have watched queens gambit", LearningCurve= 8, Suggestion = "Study the greats", GameId= 11},
+          new Review {ReviewId =3, Title="Try to fly", Experience="This game was great", LearningCurve= 4, Suggestion = "Plan ahead but don't get caught without a card.", GameId= 4}
         );  
     }
 
