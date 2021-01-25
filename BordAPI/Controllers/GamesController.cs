@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using BordAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace BordAPI.Controllers
 {
@@ -21,11 +21,35 @@ namespace BordAPI.Controllers
 
     //GET api/games
     [HttpGet]
-    public ActionResult<IEnumerable<Game>> Get()
+    public ActionResult<IEnumerable<Game>> Get(string gameName, int? minPlayers, int? maxPlayers, int? minAge, int? playTimeMin, string search, bool random)
     {
-      return _db.Games.ToList();
+      var query = _db.Games.AsQueryable();
+      if (gameName != null)
+      {
+        query = query.Where(entry => entry.GameName == gameName);
+      }
+      if (minPlayers != null)
+      {
+        query = query.Where(entry => entry.MinPlayers >= minPlayers);
+      }
+      if (maxPlayers != null)
+      {
+        query = query.Where(entry => entry.MaxPlayers <= maxPlayers);
+      }
+      if (search != null)
+      {
+        query = query.Where(entry => entry.GameName == search);
+      }
+      if (random != false)
+      {
+        Random rnd = new Random();
+        int toSkip = rnd.Next(0, _db.Games.Count());
+        Game randomGame = _db.Games.OrderBy(r => Guid.NewGuid()).Skip(toSkip).Take(1).First();
+
+        query = query.Where(entry => entry.GameId == randomGame.GameId);
+      }
+      return query.ToList();
     }
-    
     //POST api/games
     [HttpPost]
     public void Post([FromBody] Game game)
@@ -35,7 +59,7 @@ namespace BordAPI.Controllers
     }
     //GET api/games/{id}
     [HttpGet("{id}")]
-    public ActionResult<Game> GetAction(int id)
+    public ActionResult<Game> Get(int id)
     {
       return _db.Games.FirstOrDefault(entry => entry.GameId == id);
     }
@@ -55,7 +79,5 @@ namespace BordAPI.Controllers
       _db.Games.Remove(gameToDelete);
       _db.SaveChanges();
     }
-
-
   }
 }
