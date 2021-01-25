@@ -9,9 +9,13 @@ namespace BordAPI.Models
     public string Experience { get; set; }
     public int LearningCurve { get; set; }
     public string Suggestion { get; set; }
-    public List<Game> SimilarGames { get; set; } //?
+    //private List<Game> _similarGames;
+    public List<Game> SimilarGames {get; set; }///?
+    // {
+    //   get { return } // function to pull games of like genre
+    //   set { _similarGames = value;}
+    // }
     public int GameId { get; set; }
-
     public virtual Game Game { get; set; }
     public int UserId { get; set; }
   }
