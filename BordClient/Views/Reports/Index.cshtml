@@ -1,0 +1,17 @@
+
+<h1>All Reviews:</h1>
+
+<ol>
+@foreach (Review review in Model)
+{
+  <ul>
+    @* <li>ID: @report.ReportId</li> *@
+    <li>Date: @review.Date</li>
+    <li>Condition: @review.Condition</li>
+    <li>Location: @review.Location</li>
+    <li>Username: @review.Username</li>
+  </ul>
+  <a href="/Reports/Details/@(report.ReportId)"><p>View Details</p></a>
+  <br>
+}
+</ol>
