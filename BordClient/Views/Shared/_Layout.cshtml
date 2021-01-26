@@ -7,6 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -48,11 +49,58 @@
             @RenderBody()
         </main>
     </div>
-        <div class="card" id="searchcard" style="width: 200px; background-color: #999; z-index: 10; position: fixed; left: 20px; top: 50px; height: auto;">
-            <div class="cardheader">
-                <h3> Header </h3>
-            <div class="cardbody">
-                <p> sort by stuff </p>
+        <div class="card" id="searchcard" style="width: 200px; background-color: rgb(96, 211, 148, .5); z-index: 10; position: fixed; left: 65px; top: 150px; height: auto;">
+        <div class="cardheader">
+            <h1> Filter by </h1>
+        </div>
+        <div class="cardbody">
+            <div class="genre">
+            <h3>Genre</h3>
+            
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+            
+
+            <h3>Rating</h3>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            
             </div>
         </div>
     </div>

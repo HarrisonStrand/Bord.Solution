@@ -61,16 +61,23 @@ button.accept-policy {
 /* Sort by Category Card styles
 -------------------------------------------------- */
 
-.card #searchcard {
-  width: 200px; 
-  background-color: #999;
-  z-index: 10;
-  position: fixed; 
-  left: 20px;
-  top: 50px;
-  height: auto;
+.cardheader {
   padding: 5px;
-  margin-left: 10px;
+  text-align: center;
+  margin: auto;
+}
+.cardbody {
+  padding-left: 15px;
+  text-align: left;
+}
+
+label {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.checked {
+  color: #DDBB55;
 }
 
 /* Sticky footer styles
