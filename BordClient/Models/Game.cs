@@ -20,7 +20,7 @@ namespace BordClient.Models
 
     public static List<Game> GetGames()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = GamesApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
@@ -31,7 +31,7 @@ namespace BordClient.Models
 
     public static Game GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = GamesApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
@@ -42,17 +42,17 @@ namespace BordClient.Models
     public static void Post(Game game)
     {
       string jsonGame = JsonConvert.SerializeObject(game);
-      var apiCallTask = ApiHelper.Post(jsonGame);
+      var apiCallTask = GamesApiHelper.Post(jsonGame);
     }
     public static void Put(Game game)
     {
       string jsonGame = JsonConvert.SerializeObject(game);
-      var apiCallTask = ApiHelper.Put(game.GameId, jsonGame);
+      var apiCallTask = GamesApiHelper.Put(game.GameId, jsonGame);
     }
 
     public static void Delete (int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = GamesApiHelper.Delete(id);
     }
   }
 }

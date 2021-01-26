@@ -1,0 +1,26 @@
+@using BordClient.Models;
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>All Games:</h1>
+
+<ol>
+@foreach (Game game in Model)
+{
+    <ul>
+        <li>Name: @game.GameName</li>
+    </ul>
+
+    <br>
+}
+</ol>
+<a href="/Home/Index">
+    <p>Home</p>
+</a>

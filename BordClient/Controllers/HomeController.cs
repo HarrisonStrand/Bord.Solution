@@ -14,6 +14,7 @@ namespace BordClient.Controllers
         {
             return View();
         }
+        
 
         public IActionResult Privacy()
         {
