@@ -7,6 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,15 +19,15 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header class="TopNavBar">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bord</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" id="BordText">Bord</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"  id="HeaderText">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -48,6 +49,96 @@
             @RenderBody()
         </main>
     </div>
+        <div class="card" id="searchcard" style="width: 200px; background-color: rgb(96, 211, 148, .5); z-index: 10; position: fixed; left: 65px; top: 150px; height: auto;">
+        <div class="cardheader">
+            <h1> Filter by </h1>
+        </div>
+        <div class="cardbody">
+            <div class="genre">
+            <h3>Genre</h3>
+            
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+            
+
+            <h3>Rating</h3>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            
+            </div>
+        </div>
+    </div>
+
+@* <!-- Trigger/Open The Modal --> *@
+<button id="myBtn">Write A Review</button>
+
+@* <!-- The Modal --> *@
+<div id="myModal" class="modal">
+
+@* <!-- Modal content --> *@
+    <div class="modal-content">
+    <span class="close">&times;</span>
+        <form action="/action_page.php">
+            <label for="reviewtitle">Title:</label>
+            <br>
+            <input type="text" id="reviewtitle" name="reviewtitle">
+            <br>
+            <label for="reviewbody">Review:</label>
+            <br>
+            <input type="text" id="reviewbody" name="reviewbody">
+            <br>
+            <label for="experience">Experience:</label>
+            <br>
+            <input type="text" id="experience" name="experience">
+            <br>
+            <label for="difficulty">Difficulty:</label>
+            <br>
+            <input type="text" id="difficulty" name="difficulty">
+            <br>
+            <label for="whatyoushouldknow">What you should know:</label>
+            <br>
+            <input type="text" id="whatyoushouldknow" name="whatyoushouldknow">
+            <br>
+            <input type="submit" id="reviewsubmit" value="Submit">
+        </form>
+    </div>
+</div>
 
     <footer class="border-top footer text-muted">
         <div class="container">

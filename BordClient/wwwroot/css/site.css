@@ -5,7 +5,6 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  border-color: #CCA429;
 }
 
 /* Sticky footer styles
@@ -16,14 +15,34 @@ html {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
-  }
+  }  
+}
+
+.TopNavBar {
+  background-color: #DDBB55;
+  border-radius: 15px 150px 15px 150px;
+  width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
+#BordText {
+  font-size: larger;
+  font-style: unset;
+}
+
+#HeaderText {
+  margin-left: 30%
 }
 
 .border-top {
-  border-top: 1px solid #CCA429;
+  border-top: 2px solid  rgb(0, 0, 0, 0.7);
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  margin-top: 10px;
+  border-bottom: 5px solid  rgb(0, 0, 0, 0.7);
+  border-radius: 15px 150px 15px 150px;
+  width: 750px;
 }
 
 .box-shadow {
@@ -35,6 +54,112 @@ button.accept-policy {
   line-height: inherit;
 }
 
+/* Sort by Category Card styles
+-------------------------------------------------- */
+
+.cardheader {
+  padding: 5px;
+  text-align: center;
+  margin: auto;
+}
+.cardbody {
+  padding-left: 15px;
+  text-align: left;
+}
+
+label {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.checked {
+  color: #DDBB55;
+}
+
+/* Modal Review Box
+-------------------------------------------------- */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(58, 57, 57, 0.623); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 6% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 3px solid rgb(71, 71, 71);
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: 80%;
+  text-align: center;
+  border-left: 3px solid rgb(0, 0, 0);
+  border-right: 3px solid rgb(0, 0, 0);
+  border-radius: 15px 150px 15px 150px;
+  border-bottom: 5px solid  rgb(0, 0, 0);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* The Close Button */
+.close {
+  color: rgb(117, 116, 116);
+  margin-left: 880px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #DDBB55;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#reviewbody {
+  width: 75%;
+  height: 35%;
+  margin: 10px;
+}
+
+#reviewtitle {
+  width: 40%;
+  height: 10%;
+  margin: 10px;
+}
+
+#experience {
+  width: 75%;
+  height: 20%;
+  margin: 10px;
+}
+
+#difficulty {
+  
+  margin: 10px;
+}
+
+#whatyoushouldknow{
+  
+  margin: 10px;
+}
+
+#reviewsubmit{
+  margin: 45px;
+}
+
+
+
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -45,14 +170,20 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #50514f;
 }
 .footer {
   position: absolute;
+  background-color: #DDBB55;
+  border-radius: 100px 100px 0px 0px;
+  color: #000000;
   bottom: 0;
-  width: 100%;
+  width: 75%;
+  margin: auto;
   white-space: nowrap;
+  text-align: center;
+  margin-left: 12.5%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  color: #CCA429;
+  height: 35px;
+  line-height: 35px; /* Vertically center the text there */
 }
