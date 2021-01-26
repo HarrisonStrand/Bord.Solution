@@ -21,8 +21,17 @@ namespace BordAPI.Controllers
 
     //GET api/games
     [HttpGet]
-    public ActionResult<IEnumerable<Game>> Get(string gameName, int? minPlayers, int? maxPlayers, int? minAge, int? playTimeMin, string search, bool random)
+    public ActionResult<IEnumerable<Game>> Get(int id, string gameName, int? minPlayers, int? maxPlayers, int? minAge, int? playTimeMin, string search, bool random)
     {
+      // if (id !=0)
+      // {
+      //   _db.GameGenres.Add(new GameGenre(){GameId=game.GameId, GenreId=id});
+      // }
+      // var thisGame = _db.Games
+      //   .Include(game => game.Genres)
+      //   .ThenInclude(join=>join.Genre)
+      //   .FirstOrDefault(game=>game.GameId == id);
+      //   var query = thisGame.AsQueryable();
       var query = _db.Games.AsQueryable();
       if (gameName != null)
       {
@@ -38,7 +47,7 @@ namespace BordAPI.Controllers
       }
       if (search != null)
       {
-        query = query.Where(entry => entry.GameName == search);
+        query = query.Where(entry => entry.GameName.Contains(search));
       }
       if (random != false)
       {
@@ -52,11 +61,32 @@ namespace BordAPI.Controllers
     }
     //POST api/games
     [HttpPost]
-    public void Post([FromBody] Game game)
+    public void Post([FromBody] Game game, int id)
     {
+      
+
+      // Game thisGame = _db.Games
+      //   .Include(game => game.Genres)
+      //   .ThenInclude(join=>join.Genre)
+      //   .FirstOrDefault(game=>game.GameId == id);
       _db.Games.Add(game);
-      _db.SaveChanges();
+      if (id !=0)
+      {
+        _db.GameGenres.Add(new GameGenre(){GameId=game.GameId, GenreId=id});
+      }
+      _db.SaveChanges();  
     }
+// public ActionResult Create(Flavor flavor, int TreatId)
+//     {
+//       _db.Flavors.Add(flavor);
+//       if (TreatId !=0)
+//       {
+//         _db.TreatFlavor.Add(new TreatFlavor(){FlavorId=flavor.FlavorId, TreatId=TreatId});
+//       }
+//       _db.SaveChanges();
+//       return RedirectToAction("Index");
+//     }
+
     //GET api/games/{id}
     [HttpGet("{id}")]
     public ActionResult<Game> Get(int id)

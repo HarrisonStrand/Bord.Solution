@@ -18,7 +18,7 @@ namespace BordAPI.Models
     public int? MinAge { get; set; }
     public int? PlayTimeMin { get; set; }
     public int GenreId { get; set; }
-    public Genre Genre { get; set; }
+    //public Genre Genre { get; set; }
     public virtual ICollection<GameGenre> Genres{get;}
     public virtual ICollection<Review> Reviews {get;set;}
 
