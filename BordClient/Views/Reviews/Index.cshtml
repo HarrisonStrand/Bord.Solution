@@ -1,6 +1,18 @@
 @using BordClient.Models;
 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "_Layout";
+}
+
 <h1>All Reviews:</h1>
+
+<a href="/Games/Index">
+    <p>Games</p>
+</a>
 
 <ol>
 @foreach (Review review in Model)
@@ -8,10 +20,7 @@
   <ul>
     <li>Title: @review.Title</li>
     <li>Experience: @review.Experience</li>
-    <li>Difficulty: @review.LearningCurve</li>
-    <li>Suggestion: @review.Suggestion</li>
   </ul>
-  <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
   <br>
 }
 </ol>
