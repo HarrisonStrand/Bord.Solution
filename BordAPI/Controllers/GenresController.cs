@@ -20,9 +20,18 @@ namespace BordAPI.Controllers
     }
     //GET api/genres
     [HttpGet]
-    public ActionResult<IEnumerable<Genre>> Get()
-    {
-      return _db.Genres.ToList();
+    public ActionResult<IEnumerable<Genre>> Get(string genreName)
+    { 
+      var query=_db.Genres
+      .Include(genre=>genre.Games)
+      .ThenInclude(join=>join.Game)
+      .ThenInclude(game=>game.Reviews)
+      .AsQueryable();
+      if (genreName != null)
+      {
+        query = query.Where(entry => entry.GenreName.Contains(genreName));
+      }
+      return query.ToList();
     }
     //POST api/genres
     [HttpPost]

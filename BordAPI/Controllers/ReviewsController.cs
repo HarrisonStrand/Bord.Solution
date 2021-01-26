@@ -20,16 +20,21 @@ namespace BordAPI.Controllers
     }
     //GET api/reviews
     [HttpGet]
-    public ActionResult<IEnumerable<Review>> Get(int? learningCurve, Game game)
+    public ActionResult<IEnumerable<Review>> Get(int? learningCurve, int? gameId)
     {
-      var query = _db.Reviews.AsQueryable();
+      var query = _db.Reviews
+        .Include(review=>review.Game)
+        .ThenInclude(game=>game.Genres)
+        .ThenInclude(join=>join.Genre)
+        .OrderBy(review=>review.ReviewId)
+        .AsQueryable();
       if (learningCurve != null)
       {
         query = query.Where(entry => entry.LearningCurve == learningCurve);
       }
-      if (game != null)
+      if (gameId != null)
       {
-        query = query.Where(entry => entry.Game == game);
+        query = query.Where(entry => entry.GameId == gameId);
       }
       return query.ToList();
     }
