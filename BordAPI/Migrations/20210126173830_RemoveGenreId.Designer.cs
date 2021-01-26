@@ -3,14 +3,16 @@ using System;
 using BordAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BordAPI.Migrations
 {
     [DbContext(typeof(BordAPIContext))]
-    partial class BordAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20210126173830_RemoveGenreId")]
+    partial class RemoveGenreId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

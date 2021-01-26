@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BordAPI.Migrations
 {
     [DbContext(typeof(BordAPIContext))]
-    [Migration("20210125233517_SeedData")]
-    partial class SeedData
+    [Migration("20210126170909_Reset")]
+    partial class Reset
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,8 +41,6 @@ namespace BordAPI.Migrations
                     b.Property<int?>("PlayTimeMin");
 
                     b.HasKey("GameId");
-
-                    b.HasIndex("GenreId");
 
                     b.ToTable("Games");
 
@@ -208,7 +206,7 @@ namespace BordAPI.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("GameGenres");
+                    b.ToTable("GameGenre");
 
                     b.HasData(
                         new
@@ -400,14 +398,6 @@ namespace BordAPI.Migrations
                             Suggestion = "Plan ahead but don't get caught without a card.",
                             Title = "Try to fly"
                         });
-                });
-
-            modelBuilder.Entity("BordAPI.Models.Game", b =>
-                {
-                    b.HasOne("BordAPI.Models.Genre", "Genre")
-                        .WithMany()
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BordAPI.Models.GameGenre", b =>

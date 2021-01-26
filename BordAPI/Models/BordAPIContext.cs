@@ -11,7 +11,7 @@ namespace BordAPI.Models
     public DbSet<Review> Reviews { get; set; } //virtual?
     public DbSet<Game> Games { get; set; }
     public DbSet<Genre> Genres { get; set; }
-    public DbSet<GameGenre> GameGenres { get; set; }
+    public DbSet<GameGenre> GameGenre { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
