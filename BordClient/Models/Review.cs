@@ -19,7 +19,7 @@ namespace BordClient.Models
 
     public static List<Review> GetReviews()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ReviewsApiHelper.GetAll();
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
@@ -30,7 +30,7 @@ namespace BordClient.Models
 
     public static Review GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
+      var apiCallTask = ReviewsApiHelper.Get(id);
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
@@ -41,17 +41,17 @@ namespace BordClient.Models
     public static void Post(Review review)
     {
       string jsonReview = JsonConvert.SerializeObject(review);
-      var apiCallTask = ApiHelper.Post(jsonReview);
+      var apiCallTask = ReviewsApiHelper.Post(jsonReview);
     }
     public static void Put(Review review)
     {
       string jsonReview = JsonConvert.SerializeObject(review);
-      var apiCallTask = ApiHelper.Put(review.ReviewId, jsonReview);
+      var apiCallTask = ReviewsApiHelper.Put(review.ReviewId, jsonReview);
     }
 
     public static void Delete (int id)
     {
-      var apiCallTask = ApiHelper.Delete(id);
+      var apiCallTask = ReviewsApiHelper.Delete(id);
     }
   }
 }
