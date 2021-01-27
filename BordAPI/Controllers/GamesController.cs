@@ -73,10 +73,15 @@ namespace BordAPI.Controllers
 
     //GET api/games/{id}
     [HttpGet("{id}")]
-    public ActionResult<Game> Get(int id)
+    public ActionResult <IEnumerable<Game>> Get(int id)
     {
-      return _db.Games.FirstOrDefault(entry => entry.GameId == id);
+        return _db.Games.FirstOrDefault(entry => entry.GameId == id)
+        .Include(game => game.Genres)
+        .ThenInclude(join => join.Genre)
+        .Include(game => game.Reviews)
+        .AsQueryable();
     }
+
     //PUT api/games/{id}
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Game game)
