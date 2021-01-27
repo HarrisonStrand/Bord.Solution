@@ -69,5 +69,12 @@ namespace BordClient.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult AddReview(Review review, int id)
+        {
+            Game.Post(review);
+            return RedirectToAction("Index");
+        }
     }
 }
