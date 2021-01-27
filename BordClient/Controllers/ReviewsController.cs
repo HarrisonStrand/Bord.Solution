@@ -17,8 +17,9 @@ namespace BordClient.Controllers
             var allReviews = Review.GetReviews();
             return View(allReviews);
         }
+
         [HttpPost]
-        public IActionResult Index(Review review)
+        public IActionResult Create(Review review)
         {
             Review.Post(review);
             return RedirectToAction("Index");
@@ -49,5 +50,10 @@ namespace BordClient.Controllers
             Review.Delete(id);
             return RedirectToAction("Index");
         }
+
+        // public IActionResult AddGame()
+        // {
+        //     return View();
+        // }
     }
 }

@@ -1,4 +1,5 @@
 @using BordClient.Models;
+@model BordClient.Models.Game;
 
 
 @{
@@ -9,16 +10,13 @@
     Layout = "_Layout";
 }
 
-<h1>VIEW WORKS</h1>
+<h1>LIJSOEIGJOSEIHGF</h1>
 
-@* <!-- The Modal --> *@
-<div id="myModal" class="modal">
 
 @* <!-- Modal content --> *@
 <div class="modal-content">
     <span class="close">&times;</span>
-        <form action="" method="POST">
-
+        <form asp-controller="Games" asp-action="AddReview" method="POST">
             <label for="reviewtitle">Title:</label>
             <br>
             <input type="text" id="reviewtitle" name="reviewtitle">

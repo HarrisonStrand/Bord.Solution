@@ -6,6 +6,11 @@ using BordAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace BordAPI.Controllers
 {
@@ -24,9 +29,9 @@ namespace BordAPI.Controllers
     public ActionResult<IEnumerable<Game>> Get(string gameName, int? minPlayers, int? maxPlayers, int? minAge, int? playTimeMin, string search, bool random)
     {
       var query = _db.Games
-        .Include(game=>game.Genres)
-        .ThenInclude(join=>join.Genre)
-        .Include(game=>game.Reviews)
+        .Include(game => game.Genres)
+        .ThenInclude(join => join.Genre)
+        .Include(game => game.Reviews)
         .AsQueryable();
       if (gameName != null)
       {
@@ -59,11 +64,11 @@ namespace BordAPI.Controllers
     public void Post([FromBody] Game game, int id)
     {
       _db.Games.Add(game);
-      if (id !=0)
+      if (id != 0)
       {
-        _db.GameGenre.Add(new GameGenre(){GameId=game.GameId, GenreId=id});
+        _db.GameGenre.Add(new GameGenre() { GameId = game.GameId, GenreId = id });
       }
-      _db.SaveChanges();  
+      _db.SaveChanges();
     }
 
     //GET api/games/{id}
@@ -88,5 +93,13 @@ namespace BordAPI.Controllers
       _db.Games.Remove(gameToDelete);
       _db.SaveChanges();
     }
+
+    // [HttpPost]
+    // public void AddReview(Game game)
+    // {
+    //   _db.Games.Add(new Review() { GameId = game.GameId});
+    //   _db.SaveChanges();
+    //   //return RedirectToAction("Details", "Games", new {id = game.GameId});
+    // }
   }
 }

@@ -27,7 +27,7 @@ namespace BordAPI.Controllers
         .ThenInclude(game=>game.Genres)
         .ThenInclude(join=>join.Genre)
         .OrderBy(review=>review.ReviewId)
-        .AsQueryable();
+        .AsQueryable(); 
       if (learningCurve != null)
       {
         query = query.Where(entry => entry.LearningCurve == learningCurve);
@@ -45,13 +45,14 @@ namespace BordAPI.Controllers
       _db.Reviews.Add(review);
       _db.SaveChanges();
     }
+
     //GET api/reviews/{id}
     [HttpGet("{id}")]
     public ActionResult<Review> Get(int id)
     {
       return _db.Reviews.FirstOrDefault(entry => entry.ReviewId == id);
     }
-    // PUT api/reviews/{id}
+
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Review review)
     {
@@ -59,6 +60,7 @@ namespace BordAPI.Controllers
       _db.Entry(review).State = EntityState.Modified;
       _db.SaveChanges();
     }
+
     //DELETE api/reviews/{id}
     [HttpDelete("{id}")]
     public void Delete(int id)
@@ -67,5 +69,18 @@ namespace BordAPI.Controllers
       _db.Reviews.Remove(reviewToDelete);
       _db.SaveChanges();
     }
+    [HttpGet("{id}")]
+    public ActionResult<Game> AddGame(int id)
+    {
+      return _db.Games.FirstOrDefault(x=>x.GameId == id);
+    }
+
+    // [HttpPost]
+    // public void AddGame(Game game)
+    // {
+    //   _db.Reviews.Add(new Review() { GameId = game.GameId});
+    //   _db.SaveChanges();
+    //   //return RedirectToAction("Details", "Games", new {id = game.GameId});
+    // }
   }
 }

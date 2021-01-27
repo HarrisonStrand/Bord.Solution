@@ -12,19 +12,88 @@
 <a href="/Reviews/Index">
     <p>Reviews</p>
 </a>
-
 <h1>All Games:</h1>
+
+<div class="card" id="searchcard" style="width: 200px; background-color: rgb(96, 211, 148, .5); z-index: 10; position: fixed; left: 65px; top: 150px; height: auto;">
+        <div class="cardheader">
+            <h1> Filter by </h1>
+        </div>
+        <div class="cardbody">
+            <div class="genre">
+            <h3>Genre</h3>
+            
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+
+            <input type="checkbox" id="sci-fi" value="1">
+            <label for="sci-fi">Sci-fi</label>
+            
+            <input type="checkbox" id="horror" value="1">
+            <label for="horror">Horror</label><br>
+            
+
+            <h3>Rating</h3>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            
+            </div>
+        </div>
+    </div>
+
+
 
 <ol>
 @foreach (Game game in Model)
 {
-    <ul>
-        <li>Name: @game.GameName</li>
-    </ul>
-
+    <div class="flip-box">
+    <div class="flip-box-inner">
+        <div class="flip-box-front">
+        <h1>@game.GameName</h1>
+        <h2>@game.Creators</h2>
+        </div>
+        <div class="flip-box-back">
+        <h3>@game.GameName</h3>
+        <br>
+        <p>@game.MinPlayers to @game.MaxPlayers</p>
+        @* <!-- Trigger/Open The Modal --> *@
+        @* <button id="myBtn" asp-controller="Games" asp-action="AddReview">Write A Review</button> *@
+        @Html.ActionLink("Write A Review", "AddReview", new {id = game.GameId} );
+        </div>
+    </div>
+    </div>
     <br>
 }
 </ol>
-<a href="/Home/Index">
-    <p>Home</p>
+<a href="/Games/Index">
+    <p>Games</p>
 </a>

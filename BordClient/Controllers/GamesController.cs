@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace BordClient.Controllers
 {
     public class GamesController : Controller
     {
-        
         public IActionResult Privacy()
         {
             return View();
@@ -59,6 +63,11 @@ namespace BordClient.Controllers
         {
             Game.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult AddReview()
+        {
+            return View();
         }
     }
 }
