@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using BordAPI.Entities;
 
 namespace BordAPI.Models
 {
@@ -12,7 +13,7 @@ namespace BordAPI.Models
     public DbSet<Game> Games { get; set; }
     public DbSet<Genre> Genres { get; set; }
     public DbSet<GameGenre> GameGenre { get; set; }
-
+    public DbSet<User> Users { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
       builder.Entity<Genre>()
@@ -28,23 +29,23 @@ namespace BordAPI.Models
         );
       builder.Entity<GameGenre>()
         .HasData(
-          new GameGenre {GameGenreId=1, GameId=1, GenreId=6},
-          new GameGenre {GameGenreId=2, GameId=2, GenreId=6},
-          new GameGenre {GameGenreId=3, GameId=3, GenreId=3},
-          new GameGenre {GameGenreId=4, GameId=4, GenreId=2},
-          new GameGenre {GameGenreId=5, GameId=5, GenreId=1},
-          new GameGenre {GameGenreId=6, GameId=6, GenreId=4},
-          new GameGenre {GameGenreId=7, GameId=7, GenreId=1},
-          new GameGenre {GameGenreId=8, GameId=8, GenreId=7},
-          new GameGenre {GameGenreId=9, GameId=9, GenreId=8},
-          new GameGenre {GameGenreId=10, GameId=10, GenreId=8},
-          new GameGenre {GameGenreId=11, GameId=11, GenreId=2},
-          new GameGenre {GameGenreId=12, GameId=12, GenreId=2},
-          new GameGenre {GameGenreId=13, GameId=1, GenreId=5},
-          new GameGenre {GameGenreId=14, GameId=2, GenreId=8}
+          new GameGenre { GameGenreId = 1, GameId = 1, GenreId = 6 },
+          new GameGenre { GameGenreId = 2, GameId = 2, GenreId = 6 },
+          new GameGenre { GameGenreId = 3, GameId = 3, GenreId = 3 },
+          new GameGenre { GameGenreId = 4, GameId = 4, GenreId = 2 },
+          new GameGenre { GameGenreId = 5, GameId = 5, GenreId = 1 },
+          new GameGenre { GameGenreId = 6, GameId = 6, GenreId = 4 },
+          new GameGenre { GameGenreId = 7, GameId = 7, GenreId = 1 },
+          new GameGenre { GameGenreId = 8, GameId = 8, GenreId = 7 },
+          new GameGenre { GameGenreId = 9, GameId = 9, GenreId = 8 },
+          new GameGenre { GameGenreId = 10, GameId = 10, GenreId = 8 },
+          new GameGenre { GameGenreId = 11, GameId = 11, GenreId = 2 },
+          new GameGenre { GameGenreId = 12, GameId = 12, GenreId = 2 },
+          new GameGenre { GameGenreId = 13, GameId = 1, GenreId = 5 },
+          new GameGenre { GameGenreId = 14, GameId = 2, GenreId = 8 }
 
         );
-                
+
       builder.Entity<Game>()
         .HasData(
           new Game { GameId = 1, GameName = "9 Tiles Panic", GamePrice = 35.99F, MinPlayers = 2, MaxPlayers = 6, Creators = "Oink Games", MinAge = 12, PlayTimeMin = 30 },
@@ -56,17 +57,17 @@ namespace BordAPI.Models
           new Game { GameId = 7, GameName = "Nemesis", GamePrice = 144.00F, MinPlayers = 1, MaxPlayers = 5, Creators = "Adam Kwapiński", MinAge = 12, PlayTimeMin = 90 },
           new Game { GameId = 8, GameName = "Jenga", GamePrice = 14.99F, MinPlayers = 1, MaxPlayers = 8, Creators = "Leslie Scott", MinAge = 6, PlayTimeMin = 20 },
           new Game { GameId = 9, GameName = "Zombie Kidz Evolution", GamePrice = 22.99F, MinPlayers = 2, MaxPlayers = 4, Creators = "Annick Lobet", MinAge = 7, PlayTimeMin = 15 },
-          new Game { GameId = 10, GameName = "Monopoly", GamePrice = 14.99F, MinPlayers = 2, MaxPlayers = 6, Creators = "Hasbro", MinAge = 5, PlayTimeMin = 120},
+          new Game { GameId = 10, GameName = "Monopoly", GamePrice = 14.99F, MinPlayers = 2, MaxPlayers = 6, Creators = "Hasbro", MinAge = 5, PlayTimeMin = 120 },
           new Game { GameId = 11, GameName = "Chess", GamePrice = 14.99F, MinPlayers = 1, MaxPlayers = 2, Creators = "Unknown", MinAge = 4, PlayTimeMin = 30 },
-          new Game { GameId = 12, GameName = "Risk", GamePrice = 24.99F, MinPlayers = 2, MaxPlayers = 6, Creators = "Hasbro", MinAge = 8, PlayTimeMin = 90}
+          new Game { GameId = 12, GameName = "Risk", GamePrice = 24.99F, MinPlayers = 2, MaxPlayers = 6, Creators = "Hasbro", MinAge = 8, PlayTimeMin = 90 }
         );
 
       builder.Entity<Review>()
         .HasData(
-          new Review {ReviewId =1, Title="9 Times the Fun", Experience="WooHoo", LearningCurve= 3, Suggestion = "More people the better.", GameId= 1},
-          new Review {ReviewId =2, Title="Oldie but goodie", Experience="Shouldn't have watched queens gambit", LearningCurve= 8, Suggestion = "Study the greats", GameId= 11},
-          new Review {ReviewId =3, Title="Try to fly", Experience="This game was great", LearningCurve= 4, Suggestion = "Plan ahead but don't get caught without a card.", GameId= 4}
-        );  
+          new Review { ReviewId = 1, Title = "9 Times the Fun", Experience = "WooHoo", LearningCurve = 3, Suggestion = "More people the better.", GameId = 1 },
+          new Review { ReviewId = 2, Title = "Oldie but goodie", Experience = "Shouldn't have watched queens gambit", LearningCurve = 8, Suggestion = "Study the greats", GameId = 11 },
+          new Review { ReviewId = 3, Title = "Try to fly", Experience = "This game was great", LearningCurve = 4, Suggestion = "Plan ahead but don't get caught without a card.", GameId = 4 }
+        );
     }
 
 
