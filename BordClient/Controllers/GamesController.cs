@@ -73,7 +73,8 @@ namespace BordClient.Controllers
         [HttpPost]
         public IActionResult AddReview(Review review, int id)
         {
-            Game.Post(review);
+            review.GameId = id;
+            Review.Post(review);
             return RedirectToAction("Index");
         }
     }

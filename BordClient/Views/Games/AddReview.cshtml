@@ -19,35 +19,31 @@
         <form asp-controller="Games" asp-action="AddReview" method="POST">
             <label for="reviewtitle">Title:</label>
             <br>
-            <input type="text" id="reviewtitle" name="reviewtitle">
-            <br>
-            <label for="reviewbody">Review:</label>
-            <br>
-            <input type="text" id="reviewbody" name="reviewbody">
+            <input type="text" id="reviewtitle" name="Title">
             <br>
             <label for="experience">Experience:</label>
             <br>
-            <input type="text" id="experience" name="experience">
+            <input type="text" id="experience" name="Experience">
             <br>
             <br>
             <label for="whatyoushouldknow">What you should know:</label>
             <br>
-            <input type="text" id="whatyoushouldknow" name="whatyoushouldknow">
+            <input type="text" id="whatyoushouldknow" name="Suggestion">
             <br>
             <label for="difficultyrating">Difficulty:</label>
             <br>
             <div class="container" id="difficultyrating">
                 <div class="feedback">
                     <div class="rating">
-                    <input type="radio" name="rating" id="rating-5">
+                    <input type="radio" name="LearningCurve" id="rating-5" value="5"> 
                     <label for="rating-5"></label>
-                    <input type="radio" name="rating" id="rating-4">
+                    <input type="radio" name="LearningCurve" id="rating-4" value="4"> 
                     <label for="rating-4"></label>
-                    <input type="radio" name="rating" id="rating-3">
+                    <input type="radio" name="LearningCurve" id="rating-3" value="3"> //need to parse into integer form
                     <label for="rating-3"></label>
-                    <input type="radio" name="rating" id="rating-2">
+                    <input type="radio" name="LearningCurve" id="rating-2" value="2"> //need to parse into integer form
                     <label for="rating-2"></label>
-                    <input type="radio" name="rating" id="rating-1">
+                    <input type="radio" name="LearningCurve" id="rating-1" value="1"> //need to parse into integer form
                     <label for="rating-1"></label>
                     <div class="emoji-wrapper">
                         <div class="emoji">
