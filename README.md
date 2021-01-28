@@ -274,6 +274,7 @@ Download and install `Postman` from the [Postman page](https://www.postman.com/d
 2. _Run the following command: $ `dotnet restore`_
 3. _Run the following command: $ `dotnet build`_
 4. _Run the following command to execute this compiled code: $ `dotnet run`_
+5. _Open browser to `http://localhost:5003/` to access the UI._
 
 #### <span style="color:#c4f4ef" id="launchAPI">Launch the API</span>
 1. _Navigate to `Bord.Solution/BordAPI` directory using the Terminal (e.g. cd Desktop/Bord.Solution/BordAPI)._
