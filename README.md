@@ -361,7 +361,7 @@ The following is the result for a query of `http://localhost:5000/api/games/11`
 ## <span style="color:#0ec2b8" id="contact">Contributors</span>
 | Author | GitHub | Email |
 |--------|:------:|:-----:|
-| [Nataliya Zhuravleva](https://www.linkedin.com/in/nataliya-zhuravleva/) | [Nataliya Zhuravleva](https://github.com/NataliyaZhuravleva) |  [natalindria@gmail.com](natalindria@gmail.com) |
+| [Nataliya Zhuravleva](https://www.linkedin.com/in/nataliya-zhuravleva/) | [NataliyaZhuravleva](https://github.com/NataliyaZhuravleva) |  [natalindria@gmail.com](natalindria@gmail.com) |
 | [Ryland Adams](https://www.linkedin.com/in/rylandadams/) | [Pugsly99](https://github.com/Pugsly99) |  [rylandadams@yahoo.com](mailto:rylandadams@yahoo.com) |
 | [Harrison Strand](https://www.linkedin.com/in/harrisonstrand/) | [HarrisonStrand](https://github.com/HarrisonStrand) |  [harrisonstrand@gmail.com](mailto:harrisonstrand@gmail.com) |
 | [Kevin Kirkley](https://linkedin.com/in/kevin-kirkley) | [kevinkirkl3y](https://github.com/kevinkirkl3y) |  [kevinmkirkley@gmail.com](mailto:kevinmkirkley@gmail.com) |
@@ -374,8 +374,7 @@ The following is the result for a query of `http://localhost:5000/api/games/11`
 
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
-Copyright (c) 2020 **_Nataliya Zhuravleva, Ryland Adams, Harrison Strand, Kevin Kirkley_**  -->
-
+Copyright (c) 2020 **_Nataliya Zhuravleva, Ryland Adams, Harrison Strand, Kevin Kirkley_** 
 
 
 
