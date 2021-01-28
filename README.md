@@ -292,3 +292,15 @@ _If you have any questions, ideas or concerns, please, contact me at [natalindri
 *This software is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license*
 
 Copyright (c) 2020 **_Nataliya Zhuravleva_**  -->
+### Games POST or PUT 
+```{
+    "gameName": "Test",
+    "gamePrice": 0.00,
+    "minPlayers": {int},
+    "maxPlayers": {int},
+    "creators": {string},
+    "minAge": {int},
+    "playTimeMin": {int},
+    "genres": [{"genreId":5}],
+    "reviews": []
+}```
