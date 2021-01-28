@@ -1,0 +1,83 @@
+@using BordClient.Models;
+@model BordClient.Models.Game;
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+@* <!-- Modal content --> *@
+<div class="modal-content">
+    <span class="close">&times;</span>
+        <form asp-controller="Games" asp-action="Create" method="POST">
+            <label for="GameName">Name:</label>
+            <br>
+            <input type="text" id="GameName" name="GameName">
+            <br>
+            <label for="GamePrice">Price:</label>
+            <br>
+            <input type="text" id="GamePrice" name="GamePrice">
+            <br>
+            <label for="MinPlayers">Minimum Players:</label>
+            <br>
+            <input type="text" id="MinPlayers" name="MinPlayers">
+            <br>
+            <label for="MaxPlayers">Max Players:</label>
+            <br>
+            <input type="text" id="MaxPlayers" name="MaxPlayers">
+            <br>
+            <label for="Creators">Creators:</label>
+            <br>
+            <input type="text" id="Creators" name="Creators">
+            <br>
+            <label for="MinAge">Minimum Age:</label>
+            <br>
+            <input type="text" id="MinAge" name="MinAge">
+            <br>
+            <label for="PlayTimeMin">Play Time:</label>
+            <br>
+            <input type="text" id="PlayTimeMin" name="PlayTimeMin">
+            <br>
+			<label for="Genres">Genres:</label>
+            <br>
+            
+			@* <select name="Genres" id="Genres">
+				<option value="Horror">Horror</option>
+				<option value="Strategy">Strategy</option>
+				<option value="Cooperative">Cooperative</option>
+				<option value="Mystery">Mystery</option>
+				<option value="Comedy">Comedy</option>
+				<option value="Puzzle">Puzzle</option>
+				<option value="Party">Party</option>
+				<option value="Family">Family</option>
+			</select> *@
+			@* <input type="checkbox" id="Genres" name="Horror" value="Horror">
+			<input type="checkbox" id="Genres" name="Strategy" value="Strategy">
+			<input type="checkbox" id="Genres" name="Cooperative" value="Cooperative">
+			<input type="checkbox" id="Genres" name="Mystery" value="Mystery">
+			<input type="checkbox" id="Genres" name="Comedy" value="Comedy">
+			<input type="checkbox" id="Genres" name="Puzzle" value="Puzzle">
+			<input type="checkbox" id="Genres" name="Party" value="Party">
+			<input type="checkbox" id="Genres" name="Family" value="Family"> *@
+
+			
+			@* <input type="checkbox" id="Genres" name="GenreId" value="1">
+			<input type="checkbox" id="Genres" name="GenreId" value="2">
+      >      <br>
+			<input type="checkbox" id="Genres" name="GenreId" value="3">
+			<input type="checkbox" id="Genres" name="GenreId" value="4">
+            <br>
+			<input type="checkbox" id="Genres" name="GenreId" value="5">
+			<input type="checkbox" id="Genres" name="GenreId" value="6">
+            <br>
+			<input type="checkbox" id="Genres" name="GenreId" value="7">
+			<input type="checkbox" id="Genres" name="GenreId" value="8"> *@
+            <br>
+			<input type="submit" id="creategame" value="save">
+        </form>
+    </div>
+</div>
