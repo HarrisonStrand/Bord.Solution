@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 
+
+
 namespace BordAPI.Controllers
 {
   [Route("api/games")]
@@ -82,12 +84,15 @@ namespace BordAPI.Controllers
     }
     //PUT api/games/{id}
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Game game)
+    public void Put(int id, Game game)
     {
-      game.GameId = id;
+      game.GameId = id; // query with game Id to 
       _db.Entry(game).State = EntityState.Modified;
+      //_db.ObjectStateManager.ChangeObjectState(gameGenre, EntityState.Modified);
+      //_db.Entry(gameGenre).State= EntityState.Modified;
       _db.SaveChanges();
     }
+
     //DELETE api/games/{id}
     [HttpDelete("{id}")]
     public void Delete(int id)
@@ -96,13 +101,6 @@ namespace BordAPI.Controllers
       _db.Games.Remove(gameToDelete);
       _db.SaveChanges();
     }
-
-    // [HttpPost]
-    // public void AddReview(Game game)
-    // {
-    //   _db.Games.Add(new Review() { GameId = game.GameId});
-    //   _db.SaveChanges();
-    //   //return RedirectToAction("Details", "Games", new {id = game.GameId});
-    // }
   }
 }
+
