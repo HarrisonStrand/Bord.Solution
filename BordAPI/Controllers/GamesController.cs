@@ -73,13 +73,12 @@ namespace BordAPI.Controllers
 
     //GET api/games/{id}
     [HttpGet("{id}")]
-    public ActionResult <IEnumerable<Game>> Get(int id)
+    public ActionResult<IEnumerable<Game>> Get(int id)
     {
-        return _db.Games.FirstOrDefault(entry => entry.GameId == id)
+      return _db.Games.Where(e=>e.GameId == id)
         .Include(game => game.Genres)
         .ThenInclude(join => join.Genre)
-        .Include(game => game.Reviews)
-        .AsQueryable();
+        .Include(game => game.Reviews).ToList();
     }
 
     //PUT api/games/{id}
@@ -90,6 +89,7 @@ namespace BordAPI.Controllers
       _db.Entry(game).State = EntityState.Modified;
       _db.SaveChanges();
     }
+
     //DELETE api/games/{id}
     [HttpDelete("{id}")]
     public void Delete(int id)
@@ -98,13 +98,5 @@ namespace BordAPI.Controllers
       _db.Games.Remove(gameToDelete);
       _db.SaveChanges();
     }
-
-    // [HttpPost]
-    // public void AddReview(Game game)
-    // {
-    //   _db.Games.Add(new Review() { GameId = game.GameId});
-    //   _db.SaveChanges();
-    //   //return RedirectToAction("Details", "Games", new {id = game.GameId});
-    // }
   }
 }

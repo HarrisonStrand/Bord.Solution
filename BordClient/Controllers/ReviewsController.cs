@@ -50,10 +50,5 @@ namespace BordClient.Controllers
             Review.Delete(id);
             return RedirectToAction("Index");
         }
-
-        // public IActionResult AddGame()
-        // {
-        //     return View();
-        // }
     }
 }

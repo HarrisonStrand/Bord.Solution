@@ -12,84 +12,82 @@
 <a href="/Reviews/Index">
     <p>Reviews</p>
 </a>
+<a href="/Games/Create">
+    <p>Create Game</p>
+</a>
 <h1>All Games:</h1>
 
 <div class="card" id="searchcard" style="width: 200px; background-color: rgb(96, 211, 148, .5); z-index: 10; position: fixed; left: 65px; top: 150px; height: auto;">
-        <div class="cardheader">
-            <h1> Filter by </h1>
-        </div>
-        <div class="cardbody">
+    <div class="cardheader">
+        <h1> Filter by </h1>
+    </div>
+    <div class="cardbody">
+        <form asp-controller="Games" asp-action="Index" method="GET">
+            
             <div class="genre">
             <h3>Genre</h3>
             
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
             <input type="checkbox" id="horror" value="1">
             <label for="horror">Horror</label><br>
-
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
-            <input type="checkbox" id="horror" value="1">
-            <label for="horror">Horror</label><br>
-
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
-            <input type="checkbox" id="horror" value="1">
-            <label for="horror">Horror</label><br>
-
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
-            <input type="checkbox" id="horror" value="1">
-            <label for="horror">Horror</label><br>
-
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
-            <input type="checkbox" id="horror" value="1">
-            <label for="horror">Horror</label><br>
-
-            <input type="checkbox" id="sci-fi" value="1">
-            <label for="sci-fi">Sci-fi</label>
-            
-            <input type="checkbox" id="horror" value="1">
-            <label for="horror">Horror</label><br>
-            
-
-            <h3>Rating</h3>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            
+            <input type="checkbox" id="strategy" value="2">
+            <label for="strategy">strategy</label><br>
+            <input type="checkbox" id="cooperative" value="3">
+            <label for="cooperative">cooperative</label><br>
+            <input type="checkbox" id="mystery" value="4">
+            <label for="mystery">mystery</label><br>
+            <input type="checkbox" id="comedy" value="5">
+            <label for="comedy">comedy</label><br>
+            <input type="checkbox" id="puzzle" value="6">
+            <label for="puzzle">puzzle</label><br>
+            <input type="checkbox" id="party" value="7">
+            <label for="party">party</label><br>
+            <input type="checkbox" id="family" value="8">
+            <label for="family">family</label><br>
             </div>
-        </div>
-    </div>
+            <div id="difficultyrating">
+                <h3>Rating</h3>
+                <div class="rating">
+                <input type="radio" name="LearningCurve" id="rating-5" value="5"> 
+                <label for="rating-5"></label>
+                <input type="radio" name="LearningCurve" id="rating-4" value="4"> 
+                <label for="rating-4"></label>
+                <input type="radio" name="LearningCurve" id="rating-3" value="3"> 
+                <label for="rating-3"></label>
+                <input type="radio" name="LearningCurve" id="rating-2" value="2"> 
+                <label for="rating-2"></label>
+                <input type="radio" name="LearningCurve" id="rating-1" value="1"> 
+                <label for="rating-1"></label>
+            </div>
+            <br>
+            <h3>Max Players</h3>
+            <input type="number" id="MaxPlayers" name="MaxPlayers">
+            <h3>MinPlayers</h3>
+            <input type="number" id="MinPlayers" name="MinPlayers">
 
+            <input type="submit" id="filtersubmit" value="save">
+        </form>
+    </div>
+</div>
 
 
 <ol>
 @foreach (Game game in Model)
 {
     <div class="flip-box">
-    <div class="flip-box-inner">
-        <div class="flip-box-front">
-        <h1>@game.GameName</h1>
-        <h2>@game.Creators</h2>
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+            <h1>@game.GameName</h1>
+            <h2>@game.Creators</h2>
+            </div>
+            <div class="flip-box-back">
+            <h3>@game.GameName</h3>
+            <br>
+            <p>@game.MinPlayers to @game.MaxPlayers</p>
+            @* <!-- Trigger/Open The Modal --> *@
+            @* <button id="myBtn" asp-controller="Games" asp-action="AddReview">Write A Review</button> *@
+            @Html.ActionLink("Write A Review", "AddReview", new {id = game.GameId} );
+            </div>
         </div>
-        <div class="flip-box-back">
-        <h3>@game.GameName</h3>
-        <br>
-        <p>@game.MinPlayers to @game.MaxPlayers</p>
-        @* <!-- Trigger/Open The Modal --> *@
-        @* <button id="myBtn" asp-controller="Games" asp-action="AddReview">Write A Review</button> *@
-        @Html.ActionLink("Write A Review", "AddReview", new {id = game.GameId} );
-        </div>
-    </div>
     </div>
     <br>
 }
