@@ -65,8 +65,9 @@ namespace BordClient.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult AddReview()
+        public IActionResult AddReview(Game game, string name)
         {
+            game.GameName = name;
             return View();
         }
 
@@ -77,30 +78,6 @@ namespace BordClient.Controllers
             Review.Post(review);
             return RedirectToAction("Index");
         }
-
-    public ActionResult AddGenre(int id)
-    {
-        Genre thisGenre = _db.Genres.FirstOrDefault(genre => genre.GenreId == id);
-        ViewBag.GenreId = new SelectList(_db.Genres, "GenreId", "GenreName");
-        return View(thisGenre);
-    }
-
-    [HttpPost]
-    public ActionResult AddGenre(Flavor flavor, int GenreId)
-    {
-        if (GenreId != 0)
-        {
-            var returnedJoin = _db.GenreFlavor
-            .Any(join => join.FlavorId == flavor.FlavorId && join.GenreId == GenreId);
-            if (!returnedJoin)
-            {
-            _db.GenreFlavor.Add(new GenreFlavor() { FlavorId = flavor.FlavorId, GenreId=GenreId});
-            }
-        }
-        _db.SaveChanges();
-        return RedirectToAction("Details", "Flavors", new { id = flavor.FlavorId });
-    }
-    
         public IActionResult Create()
         {
             return View();

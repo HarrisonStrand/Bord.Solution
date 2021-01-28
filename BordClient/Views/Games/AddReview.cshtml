@@ -10,12 +10,11 @@
     Layout = "_Layout";
 }
 
-<h1>Write a review</h1>
+<h1 style="text-align: center;">Write A Review</h1>
 
 
 @* <!-- Modal content --> *@
 <div class="modal-content">
-    <span class="close">&times;</span>
         <form asp-controller="Games" asp-action="AddReview" method="POST">
             <label for="reviewtitle">Title:</label>
             <br>
@@ -30,9 +29,9 @@
             <br>
             <input type="text" id="whatyoushouldknow" name="Suggestion">
             <br>
-            <label for="difficultyrating">Difficulty:</label>
+            <label for="starrating">Rating:</label>
             <br>
-            <div class="container" id="difficultyrating">
+            <div class="container" id="starrating">
                 <div class="feedback">
                     <div class="rating">
                     <input type="radio" name="LearningCurve" id="rating-5" value="5"> 

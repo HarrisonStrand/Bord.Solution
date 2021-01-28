@@ -7,20 +7,35 @@
 @{
     Layout = "_Layout";
 }
-
-<h1>All Reviews:</h1>
-
-<a href="/Games/Index">
+<div class="toplinks" style="text-align: center">
+<a  href="/Reviews/Index">
+    <p>Reviews</p>
+</a>
+<a  href="/Games/Index">
     <p>Games</p>
 </a>
+<a href="/Games/Create">
+    <p>Create Game</p>
+</a>
+</div>
 
-<ol>
+<h1 style="text-align: center;">All Reviews:</h1>
+
+<ul>
 @foreach (Review review in Model)
 {
-  <ul>
-    <li>Title: @review.Title</li>
-    <li>Experience: @review.Experience</li>
-  </ul>
-  <br>
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+            <h2></h2>
+            <h3>@review.Title</h3>
+            <h2>@review.LearningCurve</h2>
+            </div>
+            <div class="flip-box-back">
+            <h3>@review.Experience</h3>
+            </div>
+        </div>
+    </div>
+    <br>
 }
-</ol>
+</ul>
